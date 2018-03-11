@@ -15,7 +15,6 @@ public class Parser implements IParser{
 	private JsonObjectBuilder object;
 	private String news;
 
-	@Override
 	public String parser(InputStream inputStream) {
 		jsonReader = Json.createReader(inputStream);
 		jsonObject = jsonReader.readObject();
@@ -26,12 +25,10 @@ public class Parser implements IParser{
 		return news;
 	}
 
-	@Override
 	public String jsonCreate(String text) {
 		object = Json.createObjectBuilder();
 		object.add("text", text);
 		jsonObject = object.build();
-		System.out.println(jsonObject.toString());
 		return jsonObject.toString();
 	}
 
