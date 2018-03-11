@@ -34,7 +34,6 @@ public class NetWork implements INetwork{
 		parser = new Parser();
 	}
 	
-	@Override
 	public String connect() throws IOException {
 		urlConnection = (HttpsURLConnection) url.openConnection();
 		urlConnection.setRequestMethod("GET");
@@ -46,7 +45,6 @@ public class NetWork implements INetwork{
 		return news;
 	}
 
-	@Override
 	public void sendJson(String text) throws IOException {
 			
 		entity = new StringEntity(parser.jsonCreate(text), ContentType.APPLICATION_JSON);
